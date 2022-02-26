@@ -1,0 +1,158 @@
+/* -------------Table of contents----------
+
+1. Typography
+2. Layouts
+3. Image-containers
+4. Buttons
+5. Media Query
+
+-----------------------------------------*/
+
+/* ================
+      CSS Reset
+    ===============*/
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --Violet: hsl(257, 40%, 49%);
+  --Soft-Magenta: hsl(300, 69%, 71%);
+  --open-sans: "Open Sans", sans-serif;
+  --poppins: "Poppins", sans-serif;
+}
+
+img {
+  max-width: 100%;
+  object-fit: cover;
+  display: block;
+}
+body {
+  background-color: var(--Violet);
+  background-image: url(images/bg-mobile.svg);
+  background-repeat: no-repeat;
+}
+
+/* ================
+      Layouts
+    ===============*/
+.wrapper {
+  width: 85%;
+  margin: 2rem auto;
+}
+.text__section {
+  text-align: center;
+  max-width: 500px;
+}
+/* ================
+      Typography
+    ===============*/
+h1,
+p {
+  color: white;
+}
+.title {
+  font-family: var(--poppins);
+  font-size: clamp(1.2rem, 3vw + 0.4rem, 1.8rem);
+}
+.desc {
+  font-family: var(--open-sans);
+  font-size: clamp(0.7rem, 2vw + 0.4rem, 1rem);
+  margin: 1.5em 0;
+}
+
+.socials__list {
+  list-style: none;
+  display: flex;
+  gap: 1em;
+  justify-content: center;
+  align-items: center;
+}
+/* ================
+       Image-containers
+    ===============*/
+.logo {
+  width: min(37%, 170px);
+}
+.mockups {
+  margin: 3em 0;
+}
+/* ================
+      Buttons
+    ===============*/
+.btn {
+  padding: 0.6em 5.5em;
+  background-color: white;
+  color: var(--Violet);
+  border-radius: 100px;
+  display: inline-block;
+  text-decoration: none;
+  font-family: var(--open-sans);
+  margin-bottom: 4em;
+  font-size: clamp(0.7rem, 2vw + 0.4rem, 1rem);
+  transition: all 400ms ease-in-out;
+}
+.btn:hover {
+  color: white;
+  background-color: var(--Soft-Magenta);
+  box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, 0.3);
+}
+.fa-brands {
+  color: white;
+  border-radius: 50%;
+  border: 1px solid white;
+  width: 25px;
+  height: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: clamp(12px, 2vw + 0.1rem, 16px);
+  transition: all 400ms ease-in-out;
+}
+.fa-brands:hover {
+  border: 1px solid var(--Soft-Magenta);
+  color: var(--Soft-Magenta);
+}
+
+/* ================
+      Media Query
+    ===============*/
+@media (min-width: 900px) {
+  body {
+    background-image: url(images/bg-desktop.svg);
+  }
+  .row {
+    display: flex;
+  }
+  .mockups {
+    margin-top: 0;
+  }
+  .title {
+    margin-top: 2em;
+  }
+  .desc {
+    margin: 2em 0;
+  }
+
+  .logo {
+    margin-bottom: 3em;
+  }
+  .text__section {
+    text-align: left;
+    margin-left: 3em;
+    position: relative;
+  }
+  .socials__list {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin-top: 3em;
+  }
+  .fa-brands {
+    width: 35px;
+    height: 35px;
+  }
+}
